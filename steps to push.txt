@@ -1,0 +1,7 @@
+Step 1: Clone the repo using git clone
+Step 2: cd to the repo directory
+step 3: Open cmd there
+step 4: Make/Add your changes to this directory and save them
+step 5: check the status using git status 
+step 6: Add all untracked files
+Step 7: commit your changes and then push it
