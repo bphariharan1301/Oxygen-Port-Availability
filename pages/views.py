@@ -6,6 +6,7 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html', {})
 
-
+def beds(request):
+    return render(request, 'beds.html', {})
 
     

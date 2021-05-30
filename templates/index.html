@@ -6,16 +6,18 @@
 <meta charset="utf-8">
 	
 <title>Covid</title>
-	<link rel="stylesheet" href="../static/css/tailwind.min.css">
 	<!-- <link rel="stylesheet" href="../static/css/tailwind.min.css"> -->
+	<link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
-	<link rel="stylesheet" href="../static/css/style.css">
+	<!-- <link rel="stylesheet" href="../static/css/style.css"> -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 
 <body>
 	<section>
+  <!-- navbar -->
 	<nav class="navbar navbar-expand-custom navbar-mainbg">
         <a class="navbar-brand navbar-logo" href="#">Covid</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +30,8 @@
                     <a class="nav-link" href="./"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./beds.html"><i class="far fa-address-book"></i>Beds(Covid)</a>
+                    <!-- <a class="nav-link" href="./beds.html"><i class="far fa-address-book"></i>Beds(Covid)</a> -->
+                    <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./oxygens.html"><i class="far fa-clone"></i>Oxygens</a>
@@ -46,6 +49,9 @@
         </div>
     </nav>
 	</section>
+
+<!-- Showcase -->
+
 <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -82,15 +88,20 @@
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img class="object-cover object-center rounded" alt="hero" src="../static/img/720x600.png">
+      <!-- <img class="object-cover object-center rounded" alt="hero" src="../static/img/720x600.png"> -->
+      <img class="object-cover object-center rounded" alt="hero" src="{% static 'img/720x600.png' %}">
     </div>
   </div>
 </section>
+
+<!-- Bed/Oxygen -->
+
 	 <div class="container-fluid px-5 py-24 mx-auto">
     <div class="flex flex-wrap -mx-4 -mb-10 text-center">
       <div class="sm:w-1/2 mb-10 px-4">
         <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/1201x501.PNG">
+          <!-- <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/1201x501.PNG"> -->
+          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'img/1201x501.PNG' %}">
         </div>
         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">For Bed Availability</h2>
         <p class="leading-relaxed text-base"> We Will Provide You A Bed ASAP, We Will There For You🤞 </p>
@@ -98,7 +109,8 @@
       </div>
       <div class="sm:w-1/2 mb-10 px-4">
         <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/undraw_medical_care_movn.png">
+          <!-- <img alt="content" class="object-cover object-center h-full w-full" src="../static/img/undraw_medical_care_movn.png"> -->
+          <img alt="content" class="object-cover object-center h-full w-full" src="{% static 'img/undraw_medical_care_movn.png' %}">
         </div>
         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Oxygen Availability</h2>
         <p class="leading-relaxed text-base"> We Will Provide You A Oxygen ASAP, We Will There For You🤞</p>
@@ -106,6 +118,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Symptoms -->
+
 	<section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="text-center mb-20">
@@ -175,6 +190,8 @@ Covid Symptoms</h1>
   </div>
 </section>
 
+<!-- Symptoms-2 -->
+
 <div class="site-section bg-primary-light" id="symptoms">
       <div class="container">
         <div class="row mb-5">
@@ -187,7 +204,8 @@ Covid Symptoms</h1>
           <div class="col-lg-6 mb-4">
             <div class="symptom d-flex">
               <div class="img">
-                <img src="../static/img/symptom_high-fever.png" alt="Image" class="img-fluid">
+                <!-- <img src="../static/img/symptom_high-fever.png" alt="Image" class="img-fluid"> -->
+                <img src="{% static 'img/symtom_high-fever.png' %}" alt="Image" class="img-fluid">
               </div>
               <div class="text">
                 <h3>High Fever</h3>
@@ -198,7 +216,8 @@ Covid Symptoms</h1>
           <div class="col-lg-6 mb-4">
             <div class="symptom d-flex">
               <div class="img">
-                <img src="../static/img/symptom_cough.png" alt="Image" class="img-fluid">
+                <!-- <img src="../static/img/symptom_cough.png" alt="Image" class="img-fluid"> -->
+                <img src="{% static 'img/symptom_cough.png' %}" alt="Image" class="img-fluid">
               </div>
               <div class="text">
                 <h3>Cough</h3>
@@ -209,7 +228,8 @@ Covid Symptoms</h1>
           <div class="col-lg-6 mb-4">
             <div class="symptom d-flex">
               <div class="img">
-                <img src="../static/img/symptom_sore-troath.png" alt="Image" class="img-fluid">
+                <!-- <img src="../static/img/symptom_sore-troath.png" alt="Image" class="img-fluid"> -->
+                <img src="static {% static 'img/symptom_sore-troath.png' %}" alt="Image" class="img-fluid">
               </div>
               <div class="text">
                 <h3>Sore Troath</h3>
@@ -221,7 +241,8 @@ Covid Symptoms</h1>
           <div class="col-lg-6 mb-4">
             <div class="symptom d-flex">
               <div class="img">
-                <img src="../static/img/symptom_headache.png" alt="Image" class="img-fluid">
+                <!-- <img src="../static/img/symptom_headache.png" alt="Image" class="img-fluid"> -->
+                <img src="{% static 'img/symptom_headache.png' %}" alt="Image" class="img-fluid">
               </div>
               <div class="text">
                 <h3>Headache</h3>
@@ -244,6 +265,8 @@ Covid Symptoms</h1>
         </div>
       </div>
     </div>
+
+<!-- Protect Yourself -->
 
     <section>
       <div class="site-section">
@@ -283,12 +306,16 @@ Covid Symptoms</h1>
             </div>
           </div>
           <div class="col-lg-6">
-            <img src="../static/img/protect.png" alt="Image" class="img-fluid">
+            <!-- <img src="../static/img/protect.png" alt="Image" class="img-fluid"> -->
+            <img src="{% static 'img/protect.png' %}" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
     </div>
     </section>
+
+    <!-- footer -->
+    
         <div class="pt-12">
             <footer id="footer" class="relative z-50 dark:bg-gray-900">
                 <div class="border-t border-b border-gray-200 dark:border-gray-700 py-16">
@@ -364,4 +391,5 @@ Covid Symptoms</h1>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="../static/js/script.js"></script>
+	<script src="{% static 'js/script.js' %}"></script>
 </html>
