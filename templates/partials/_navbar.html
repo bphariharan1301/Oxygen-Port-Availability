@@ -1,53 +1,73 @@
 <section>
-    <!-- navbar -->
-      <nav class="navbar navbar-expand-custom navbar-mainbg">
-          <a class="navbar-brand navbar-logo" href="{% url 'home' %}">Covid</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars text-white"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ml-auto">
-                  <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-                  {% if '/' == request.path %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    </li>
-                    
-                  {% else %}
-                    <li class="nav-item">
+	<nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="./index.html">Covid</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+
+                {% if '/' == request.path %}
+                  <li class="nav-item active">
                       <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                    </li>
-                  {% endif %}
-                  {% if 'beds' in request.path %}
-                    <li class="nav-item active">
-                  {% else %}
-                    <li class="nav-item">
-                  {% endif %}
-                    <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
                   </li>
-                  {% if 'oxygen' in request.path %}
-                    <li class="nav-item active">
-                  {% else %}
-                    <li class="nav-item">
-                  {% endif %}
+                {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'home' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                  </li>
+                {% endif %}
+
+                {% if 'beds' in request.path %}
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item ">
+                      <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
+                  </li>
+                {% endif %}
+
+                {% if 'oxygen' in request.path %}
+                  <li class="nav-item active">
                       <a class="nav-link" href="{% url 'oxygen' %}"><i class="far fa-clone"></i>Oxygens</a>
                   </li>
-                  {% if 'contact' in request.path %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'contact' %}"><i class="far fa-calendar-alt"></i>Contact</a>
-                    </li>
-                  {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}"><i class="far fa-calendar-alt"></i>Contact</a>
-                    </li>
-                  {% endif %}
+                {% else %}
                   <li class="nav-item">
-                      <a class="nav-link" href="Charts.html"><i class="far fa-chart-bar"></i>Charts</a>
+                      <a class="nav-link" href="{% url 'oxygen' %}"><i class="far fa-clone"></i>Oxygens</a>
                   </li>
+                {% endif %}
+
+                {% if 'contact' in request.path %}
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'contact' %}"><i class="far fa-calendar-alt"></i>Contact</a>
+                  </li>
+                {% else %}
                   <li class="nav-item">
-                      <a class="nav-link" href="./Donate.html"><i class="far fa-copy"></i>Donate</a>
+                      <a class="nav-link" href="{% url 'contact' %}"><i class="far fa-calendar-alt"></i>Contact</a>
                   </li>
-              </ul>
-          </div>
-      </nav>
-      </section>
+                {% endif %}
+
+                {% if 'charts' in request.path %}
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'charts' %}"><i class="far fa-chart-bar"></i>Charts</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'charts' %}"><i class="far fa-chart-bar"></i>Charts</a>
+                  </li>
+                {% endif %}
+                
+                {% if 'donate' in request.path %}
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Donate</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Donate</a>
+                  </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+	</section>	 
