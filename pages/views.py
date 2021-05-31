@@ -7,6 +7,11 @@ def home(request):
     return render(request, 'index.html', {})
 
 def beds(request):
+
+    beds_list = {
+        'Name':'Hello',
+    }
+    
     return render(request, 'beds.html', {})
 
     

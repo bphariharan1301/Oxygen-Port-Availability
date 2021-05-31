@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages',
+    'Oxygen_Supply',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +78,16 @@ WSGI_APPLICATION = 'Covid_Support.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# dbsqlite3
+
 '''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }'''
+
+# postgres
 
 DATABASES = {
     'default': {
