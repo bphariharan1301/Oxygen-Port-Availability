@@ -9,8 +9,13 @@ class Hospital(models.Model):
     vaccant_oxygen_bed = models.IntegerField(default=0)
     total_ICU_bed = models.IntegerField(default=0)
     vaccant_ICU_bed = models.IntegerField(default=0)
-    total_covid_bed = models.IntegerField(default=0)
-    vaccant_covid_bed = models.IntegerField(default=0)
+    total_normal_bed = models.IntegerField(default=0)
+    vaccant_normal_bed = models.IntegerField(default=0)
     total_ventilator_bed = models.IntegerField(default=0)
     vaccant_ventilator_bed = models.IntegerField(default=0)
+    total_bed = models.IntegerField(default=0)
+    total_vaccant_bed = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.title
 
