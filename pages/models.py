@@ -5,6 +5,8 @@ from django.db import models
 class Hospital(models.Model):
     name = models.CharField(max_length=100, blank=False)
     address = models.TextField()
+    state = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
     total_oxygen_bed = models.IntegerField(default=0)
     vaccant_oxygen_bed = models.IntegerField(default=0)
     total_ICU_bed = models.IntegerField(default=0)
