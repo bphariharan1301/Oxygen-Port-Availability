@@ -7,10 +7,10 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
   <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
     <div class="flex-1 flex justify-between sm:hidden">
-      <a href="./index.html" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+      <a href="{% url 'home' %}" class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
       Home
       </a>
-      <a href="./oxygens.html" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+      <a href="{% url 'oxygen' %}" class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
         Oxygens
       </a>
     </div>
@@ -89,254 +89,230 @@
                         </div>
                     </div>
                 </header>      
-  </section>
-<section class="container">
-     <div class="w-full">
-              <div class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-700 relative">
-                <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
-                  INSTITUTION	
-                </p>
-                <div class="flex items-end space-x-2 my-6">
-                  <p class="text-5xl text-black dark:text-white font-bold">
-                    SR Hospital
+</section>
 
+<!-- Beds List Start -->
+{% for hospital in hospitals %}
+  <section class="container">
+      <div class="w-full">
+                <div class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-700 relative">
+                  <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
+                    Hospital Name	
                   </p>
-                  <span class="text-green-500 text-xl font-bold flex items-center">
-                    <svg width="20" fill="currentColor" height="20" class="h-3" viewBox="0 0 1792 1792"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z">
-                      </path>
-                    </svg>
-                    22
-                  </span>
-                </div>
-                <div class="dark:text-white">
-                  <p class="text-lg w-max text-red-700 dark:text-white font-semibold border-b border-gray-200">
-                  Contact Info	
-                </p>
+                  <div class="flex items-end space-x-2 my-6">
+                    <p class="text-5xl text-black dark:text-white font-bold">
+                      {{ hospital.name }}
+
+                    </p>
+                    <span class="text-green-500 text-xl font-bold flex items-center">
+                      <svg width="20" fill="currentColor" height="20" class="h-3" viewBox="0 0 1792 1792"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z">
+                        </path>
+                      </svg>
+                      22
+                    </span>
+                  </div>
+                  <div class="dark:text-white">
+                    <p class="text-lg w-max text-red-700 dark:text-white font-semibold border-b border-gray-200">
+                    Contact Info	
+                  </p>
+                    
                   
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Address
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3><address>xyz , road no1 , aaaa,a,aaa</address></h3>
-                      </span>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Address
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3><address>{{ hospital.address }}</address></h3>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Phone
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>+91 {{ hospital.Phone_No }}</h3>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Phone
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>+91 7777 777 777</h3>
-                      </span>
+                  <!-- Covid Beds -->
+                  <div class="dark:text-white">
+                    <p class="text-lg w-max text-green-700 dark:text-white font-semibold border-b border-gray-200">
+                    COVID BEDS	
+                  </p>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Total
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.total_normal_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                  
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Occupied
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.occupied_normal_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
+                      <p>
+                      Vaccant
+                      </p>
+                      {% if hospital.vaccant_normal_bed %}
+                        <div class="flex items-end text-xs bg-green">
+                          <span class="flex items-center">
+                            <h3>{{ hospital.vaccant_normal_bed }}</h3>
+                          </span>
+                        </div>
+                      {% else %}
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3>{{ hospital.vaccant_normal_bed }}</h3>
+                          </span>
+                        </div>
+                      {% endif %}
                     </div>
                   </div>
-                </div>
-                <div class="dark:text-white">
-                  <p class="text-lg w-max text-green-700 dark:text-white font-semibold border-b border-gray-200">
-                  COVID BEDS	
-                </p>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Total
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
+                  <div class="dark:text-white">
+                    <p class="text-lg w-max text-blue-700 dark:text-white font-semibold border-b border-gray-200">
+                    OXYGEN BED	
+                  </p>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Total
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.total_oxygen_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                  
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Occupied
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.occupied_oxygen_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
+                      <p>
+                      Vaccant
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.vaccant_oxygen_bed }}</h3>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Occupied
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
+                  <!--  -->
+                  <div class="dark:text-white">
+                    <p class="text-lg w-max text-indigo-700 dark:text-white font-semibold border-b border-gray-200">
+                    ICU BED	
+                  </p>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Total
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.total_ICU_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                  
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Occupied
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.occupied_ICU_bed }}</h3>
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
+                      <p>
+                      Vaccant
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.vaccant_ICU_bed }}</h3>
+                        </span>
+                      </div>
                     </div>
                   </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Vacent
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
+                  <div class="dark:text-white">
+                    <p class="text-lg w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
+                    VENTILATOR BED	
+                  </p>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Total
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.total_ventilator_bed }}</h3>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="dark:text-white">
-                  <p class="text-lg w-max text-blue-700 dark:text-white font-semibold border-b border-gray-200">
-                  OXYGEN BED	
-                </p>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Total
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
+                  
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                      <p>
+                      Occupied
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.occupied_ventilator_bed }}</h3>
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Occupied
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Vacent
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="dark:text-white">
-                  <p class="text-lg w-max text-yellow-700 dark:text-white font-semibold border-b border-gray-200">
-                 NON OXYGEN BED		
-                </p>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Total
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Occupied
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Vacent
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                </div><div class="dark:text-white">
-                  <p class="text-lg w-max text-indigo-700 dark:text-white font-semibold border-b border-gray-200">
-                  ICU BED	
-                </p>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Total
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Occupied
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Vacent
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="dark:text-white">
-                  <p class="text-lg w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
-                  VENTILATOR BED	
-                </p>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Total
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                 
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Occupied
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
-                    </div>
-                  </div>
-                  <div
-                    class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                    <p>
-                     Vacent
-                    </p>
-                    <div class="flex items-end text-xs">
-                      <span class="flex items-center">
-                        <h3>1</h3>
-                      </span>
+                    <div
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
+                      <p>
+                      Vaccant
+                      </p>
+                      <div class="flex items-end text-xs">
+                        <span class="flex items-center">
+                          <h3>{{ hospital.vaccant_ventilator_bed }}</h3>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-</section>
+  </section>
+{% endfor %}
 
 
 </body>

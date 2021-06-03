@@ -9,6 +9,7 @@ def home(request):
 def beds(request): 
     hospitals = Hospital.objects.all() 
     context = {'hospitals':hospitals}
+    # return render(request, 'beds.html', {'hospitals':hospitals}) You can pass in this way too!
     return render(request, 'beds.html', context)
 
 def oxygen(request):
