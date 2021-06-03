@@ -1,3 +1,4 @@
+from pages.models import Hospital
 from django.shortcuts import render
 
 # Create your views here.
@@ -5,8 +6,10 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'index.html', {})
 
-def beds(request):    
-    return render(request, 'beds.html', {})
+def beds(request): 
+    hospitals = Hospital.objects.all() 
+    context = {'hospitals':hospitals}
+    return render(request, 'beds.html', context)
 
 def oxygen(request):
     return render(request, 'oxygens.html', {})

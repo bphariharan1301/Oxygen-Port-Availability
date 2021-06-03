@@ -1949,3 +1949,7 @@ figure figcaption {
 	font-size: 1.4rem;
 	color: #000;
 }
+
+.txt-black {
+	color: black !important;
+}
