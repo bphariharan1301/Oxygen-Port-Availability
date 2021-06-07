@@ -13,9 +13,11 @@
           
         <div class="row align-items-center justify-content-center">
           <div class="col-lg-6 text-center mx-auto">
-            <span class="d-block subheading">Contact</span>
+            <span class="d-block subheading">Contact Us</span>
             <h1 class="heading mb-3">Get In Touch</h1>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel a, nulla incidunt eaque sit praesentium porro consectetur optio!</p>
+            <p class="mb-5">
+              Let us know about your query or if you want us to support or any suggestions or information changes are all most welcomed by our managing team. 
+            </p>
           </div>
           
         </div>
@@ -25,18 +27,19 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <form action="#">
+            <form action="{% url 'contact-us' %}" method="POST">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="fname">First name</label>
-                    <input type="text" id="fname" class="form-control">
+                    <label for="first_name">First name</label>
+                    <input type="text" name="first_name" id="fname" class="form-control">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="lname">Last name</label>
-                    <input type="text" id="lname" class="form-control">
+                    <label for="last_name">Last name</label>
+                    <input type="text" name="last_name" id="lname" class="form-control">
                   </div>
                 </div>
               </div>
@@ -45,7 +48,7 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" id="email" class="form-control">
+                    <input type="text" name="email" id="email" class="form-control">
                   </div>
                 </div>
               </div>
@@ -54,7 +57,7 @@
                 <div class="col-lg-12">
                   <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" id="subject" class="form-control">
+                    <input type="text" name="subject" id="subject" class="form-control">
                   </div>
                 </div>
               </div>

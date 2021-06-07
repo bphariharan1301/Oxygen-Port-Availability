@@ -15,8 +15,8 @@ def beds(request):
 def oxygen(request):
     return render(request, 'oxygens.html', {})
 
-def contact(request):
-    return render(request, 'Contact.html', {})
+# def contact(request):
+#     return render(request, 'Contact.html', {})
 
 def charts(request):
     return render(request, 'Charts.html', {})
