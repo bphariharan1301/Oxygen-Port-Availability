@@ -20,11 +20,12 @@
                           
                             <ul>
                               <h6 class="footer-heading mb-4">Quick Links</h6>
-                                <li><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./index.html">Home</a></li>
-                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./beds.html">Beds</a></li>
-                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./oxygens.html">Oxygens</a></li>
-                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./Donate.html">Donate</a></li>
-                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./index.html#symptoms">Covid Symptoms</a></li>
+                                <li><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="{% url 'home' %}">Home</a></li>
+                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="{% url 'beds' %}">Beds</a></li>
+                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="{% url 'oxygen' %}l">Oxygens</a></li>
+                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="{% url 'donate' %}">Donate</a></li>
+                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="{% url 'home' %}">Covid Symptoms</a></li>
+                                <!-- <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="./index.html#symptoms">Covid Symptoms</a></li> -->
                             </ul>
                         </div>
                         <div class="w-full lg:w-1/2 px-6">
@@ -32,10 +33,10 @@
                             <ul>
                               <h6 class="footer-heading mb-4">Helpful Link
 </h6>
-                                <li><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="#" target="_blank">WHO Website</a></li>
-                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="javascript:void(0)">CDC Website</a></li>
-                                 <li class="mt-6"><a href="#" class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Gov Website </a></li>
-                                   <li class="mt-6"><a href="#" class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">DOH Website </a></li>
+                                <li><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="https://www.who.int/" target="_blank">WHO Website</a></li>
+                                <li class="mt-6"><a class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50" href="https://www.cdc.gov/" target="_blank">CDC Website</a></li>
+                                 <li class="mt-6"><a href="https://www.india.gov.in/" target="_blank" class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">Gov Website </a></li>
+                                   <li class="mt-6"><a href="https://doh.gov.ph/" target="_blank" class="text-xs lg:text-sm leading-none hover:text-brand dark:hover:text-brand text-gray-800 dark:text-gray-50">DOH Website </a></li>
 
                             </ul>
                         </div>
