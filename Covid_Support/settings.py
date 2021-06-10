@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages',
     'contacts',
+    'charts',
 ]
 
 MIDDLEWARE = [
@@ -155,3 +156,29 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email configuration
+
+# For Deployment environment
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+EMAIL_HOST_USER='covid.oxygens248@gmail.com'
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+# EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+
+EMAIL_HOST_PASSWORD ='nacvnotivwsrkqls'
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS=True
+
+# For Production environment
+
+'''EMAIL_HOST='localhost'
+EMAIL_PORT = 1025
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False'''
+

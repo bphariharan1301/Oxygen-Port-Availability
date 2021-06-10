@@ -1,5 +1,7 @@
+from Covid_Support.settings import EMAIL_HOST_USER
 from contacts.models import Contact
 from django.shortcuts import redirect, render
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -17,9 +19,20 @@ def contact(request):
         # Contact.save()
         contact.save()
 
-    
-    return render(request, 'Contact.html')
-    # return redirect('home')
+        send_mail( 
+            subject,
+            # 'Subject',
+            'A user has sent us a message:' + message + ' from ' + first_name + last_name + ' his contact details /n' + email,
+            email, # from email
+            # ['tiwariashu@pm.me', EMAIL_HOST_USER], # to email
+            [EMAIL_HOST_USER], # to email
+            fail_silently = False,
+        )
+        print(email)
+        
+        return redirect('contact-us')
+    else:
+        return render(request, 'Contact.html')
 
 # def contact(request):
 #     return render(request, 'Contact.html')
