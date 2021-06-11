@@ -1,0 +1,35 @@
+state_choices = {
+    'Andhra Pradesh':'Andhra Pradesh',
+    'Arunachal Pradesh':'Arunachal Pradesh',
+    'Assam':'Assam',
+    'Bihar':'Bihar',
+    'Chhattisgarh':'Chhattisgarh',
+    'Goa':'Goa',
+    'Gujarat':'Gujarat',
+    'Haryana':'Haryana',
+    'Himachal Pradesh':'Himachal Pradesh',
+    'Jharkhand':'Jharkhand',
+    'Karnataka':'Karnataka',
+    'Kerala':'Kerala',
+    'Madhya Pradesh':'Madhya Pradesh',
+    'Maharashtra':'Maharashtra',
+    'Manipur':'Manipur',
+    'Meghalaya':'Meghalaya',
+    'Mizoram':'Mizoram',
+    'Nagaland':'Nagaland',
+    'Odisha':'Odisha',
+    'Punjab':'Punjab',
+    'Rajasthan':'Rajasthan',
+    'Sikkim':'Sikkim',
+    'Tamil Nadu':'Tamil Nadu',
+    'Telangana':'Telangana',
+    'Uttarakhand':'Uttarakhand',
+    'Uttar Pradesh':'Uttar Pradesh',
+    'West Bengal':'West Bengal',
+    'Jammu & Kashmir':'Jammu & Kashmir',
+    'Puducherry':'Puducherry',
+}
+
+district_choices = {
+
+}
