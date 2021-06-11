@@ -15,29 +15,36 @@
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Repository of Covid Centres</h1>
       <p class="mb-8 leading-relaxed">For those who require hospitalisation, we have listed as much as possible and are continuously updating. This website may be useful but please also check government helplines.</p>
-      <div class="flex w-full md:justify-start justify-center items-end">
-        <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
+      <div class=" w-full md:justify-start justify-center items-end">
+        <!-- <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
           <label for="hero-field" class="leading-7 text-sm text-gray-600">Enter State</label>
-          <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
-        <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Serach</button>
+          <input type="text" id="hero-field" name="state" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div> -->
+        <a href="{% url 'beds' %}">
+          <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Serach</button>
+        </a>
       </div>
-      <p class="text-sm mt-2 text-gray-500 mb-8 w-full">This Data Refresh In Every 30 Minutes</p>
+      <!-- <p class="text-sm mt-2 text-gray-500 mb-8 w-full">This Data Refresh In Every 30 Minutes</p> -->
+      <br>
       <div class="flex lg:flex-row md:flex-col">
-        <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
-    <svg  fill="currentColor" class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4em" height="4em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><path fill="#E69329" d="M11.7 21.6l5.1 9.9l9.5-3.9l4.4-12.7l-14.8.8z"/><circle fill="#546E7A" cx="15" cy="36" r="7.8"/><g fill="#90A4AE"><path d="M15 27c-5 0-9 4-9 9s4 9 9 9s9-4 9-9s-4-9-9-9zm0 16c-3.9 0-7-3.1-7-7s3.1-7 7-7s7 3.1 7 7s-3.1 7-7 7z"/><path d="M14 33h2v8h-2z"/></g><g fill="#FFB74D"><path d="M12.9 36c1 1.9 3.2 2.7 5.1 1.7l16.5-8.5c1-.5 1.7-1.2 2.2-1.9c1.7-3.2 5.6-10.7 8.2-17.2l-18.2 8.7l-4.8 7.2l-6.8 3.6c-2.6 1.3-3.4 4.2-2.2 6.4z"/><path d="M30.2 3L13.7 9.3c-.7.2-1.5 1-2.2 1.7l-5.6 7.5c-1 1.5-1.2 3.4-.5 5.1c.4 1 1.7 3.4 3.1 6.1C10.1 28 12.4 27 15 27c.4 0 .9 0 1.3.1l-2.1-4.2l4.6-4.1h8s15.5-2.2 18.2-8.7L30.2 3z"/></g><path fill="#FFCDD2" d="M18.2 36c-1.3.6-2.8 0-3.3-1.3c-.6-1.3 0-2.8 1.3-3.3c1.2-.6 3.2 4 2 4.6z"/></svg>
-          <span class="ml-4 flex items-start flex-col leading-none">
-            <span class="text-xs text-gray-600 mb-1">Help Us</span>
-            <span class="title-font font-medium">Donate</span>
-          </span>
-        </button>
-        <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
-         <svg   class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15zm6.799-16L16 14.784L6.201 8z" fill="#626262"/><circle cx="26" cy="24" r="4" fill="#626262"/></svg>
-          <span class="ml-4 flex items-start flex-col leading-none">
-            <span class="text-xs text-gray-600 mb-1">Request Us</span>
-            <span class="title-font font-medium">Email</span>
-          </span>
-        </button>
+        <a href="{% url 'donate' %}">
+          <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+      <svg  fill="currentColor" class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="4em" height="4em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 48 48"><path fill="#E69329" d="M11.7 21.6l5.1 9.9l9.5-3.9l4.4-12.7l-14.8.8z"/><circle fill="#546E7A" cx="15" cy="36" r="7.8"/><g fill="#90A4AE"><path d="M15 27c-5 0-9 4-9 9s4 9 9 9s9-4 9-9s-4-9-9-9zm0 16c-3.9 0-7-3.1-7-7s3.1-7 7-7s7 3.1 7 7s-3.1 7-7 7z"/><path d="M14 33h2v8h-2z"/></g><g fill="#FFB74D"><path d="M12.9 36c1 1.9 3.2 2.7 5.1 1.7l16.5-8.5c1-.5 1.7-1.2 2.2-1.9c1.7-3.2 5.6-10.7 8.2-17.2l-18.2 8.7l-4.8 7.2l-6.8 3.6c-2.6 1.3-3.4 4.2-2.2 6.4z"/><path d="M30.2 3L13.7 9.3c-.7.2-1.5 1-2.2 1.7l-5.6 7.5c-1 1.5-1.2 3.4-.5 5.1c.4 1 1.7 3.4 3.1 6.1C10.1 28 12.4 27 15 27c.4 0 .9 0 1.3.1l-2.1-4.2l4.6-4.1h8s15.5-2.2 18.2-8.7L30.2 3z"/></g><path fill="#FFCDD2" d="M18.2 36c-1.3.6-2.8 0-3.3-1.3c-.6-1.3 0-2.8 1.3-3.3c1.2-.6 3.2 4 2 4.6z"/></svg>
+              <span class="ml-4 flex items-start flex-col leading-none">
+              <span class="text-xs text-gray-600 mb-1">Help Us</span>
+              <span class="title-font font-medium text-gray-600">Donate</span>
+            </span>
+          </button>
+        </a>
+        <a href="{% url 'contact-us' %}">
+          <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+          <svg   class="w-6 h-6"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M19 24H4L3.997 8.906l11.434 7.916a1 1 0 0 0 1.138 0L28 8.91V18h2V8a2.003 2.003 0 0 0-2-2H4a2.002 2.002 0 0 0-2 2v16a2.003 2.003 0 0 0 2 2h15zm6.799-16L16 14.784L6.201 8z" fill="#626262"/><circle cx="26" cy="24" r="4" fill="#626262"/></svg>
+            <span class="ml-4 flex items-start flex-col leading-none">
+              <span class="text-xs text-gray-600 mb-1">Request Us</span>
+              <span class="title-font font-medium text-gray-600">Email</span>
+            </span>
+          </button>
+        </a>
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -58,7 +65,9 @@
         </div>
         <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">For Bed Availability</h2>
         <p class="leading-relaxed text-base"> We Will Provide You A Bed ASAP, We Will There For You🤞 </p>
-        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">Search</button>
+        <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">
+          Search
+        </button>
       </div>
       <div class="sm:w-1/2 mb-10 px-4">
         <div class="rounded-lg h-64 overflow-hidden">
@@ -139,7 +148,11 @@ Covid Symptoms</h1>
         </div>
       </div>
     </div>
-    <a href="#"><button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> Find Support </button></a>
+    <a href="#">
+      <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"> 
+        Find Support 
+      </button>
+    </a>
   </div>
 </section>
 
