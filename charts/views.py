@@ -6,31 +6,28 @@ import requests
 
 def charts(request):
 
-    # Under Development
+    # data = []
+    url = "https://covid-193.p.rapidapi.com/statistics"
 
-    '''url = "https://covid-19-data.p.rapidapi.com/country"
-
-    querystring = {"name":"India"}
-
-    headers = {
-        'x-rapidapi-key': "b0166b2bfemsh17c840521658b71p1ee3dajsne5c3d1f64c08",
-        'x-rapidapi-host': "covid-19-data.p.rapidapi.com"
-        }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    print(response.text)'''
-
-    '''url = "https://covid-19-tracking.p.rapidapi.com/v1/India"
+    querystring = {"country":"India"}
 
     headers = {
-        'x-rapidapi-key': "b0166b2bfemsh17c840521658b71p1ee3dajsne5c3d1f64c08",
-        'x-rapidapi-host': "covid-19-tracking.p.rapidapi.com"
+        'x-rapidapi-host': "covid-193.p.rapidapi.com",
+        'x-rapidapi-key': "be7f37114bmsh38c0486c35a5050p1bc1e5jsnf574155ad041"
         }
 
-    response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers, params=querystring).json()
+    
+    d = response['response']
+    s = d[0]
 
-    print(response.text)'''
+    context = {
+        'all': s['cases']['total'],
+        'recovered': s['cases']['recovered'],
+        'deaths': s['deaths']['total'],
+        'new': s['cases']['new'],
+        'serioz': s['cases']['critical'],
+        'active': s['cases']['active']
+    }
 
-
-    return render(request, 'Charts.html')
+    return render(request, 'Charts.html', context)

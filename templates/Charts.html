@@ -37,7 +37,7 @@
     </div>
   </div>
 </div>
-<section>
+<!-- <section>
       <div class="site-section stats">
       <div class="container">
         <div class="row mb-3">
@@ -78,7 +78,7 @@
       </div>
     </div>
 
-</section>
+</section> -->
 <section>
       <div class="site-section stats">
       <div class="container">
@@ -86,6 +86,7 @@
           <div class="col-lg-7 text-center mx-auto">
             <h2 class="section-heading">India Coronavirus Statistics</h2>
             <p>*This Data verified Is By Google</p>
+            <p>*Updates every 24 hours</p>
           </div>
         </div>
         <div class="row"> 
@@ -94,7 +95,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number">14,112,077</strong>
+              <strong class="d-block number">{{ active }}</strong>
               <span class="label">Active Cases</span>
             </div>
           </div>
@@ -103,7 +104,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number">595,685</strong>
+              <strong class="d-block number">{{ deaths }}</strong>
               <span class="label">Deaths</span>
             </div>
           </div>
@@ -112,7 +113,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number">8,397,665</strong>
+              <strong class="d-block number">{{ recovered }}</strong>
               <span class="label">Recovered Cases</span>
             </div>
           </div>
