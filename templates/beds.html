@@ -127,7 +127,7 @@
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3><address>{{ hospital.address }}</address></h3>
+                          <h3  class="m-2"><address>{{ hospital.address }}</address></h3>
                         </span>
                       </div>
                     </div>
@@ -138,7 +138,7 @@
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3> {{ hospital.Phone_No }}</h3>
+                          <h3  class="m-2"> {{ hospital.Phone_No }}</h3>
                         </span>
                       </div>
                     </div>
@@ -150,42 +150,42 @@
                   </p>
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Total
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.total_normal_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.total_normal_bed }}</h3>
                         </span>
                       </div>
                     </div>
                   
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Occupied
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.occupied_normal_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.occupied_normal_bed }}</h3>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
-                      <p>
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg	">
+                      <p class="m-2">
                       Vaccant
                       </p>
                       {% if hospital.vaccant_normal_bed %}
                         <div class="flex items-end text-xs bg-green">
                           <span class="flex items-center">
-                            <h3>{{ hospital.vaccant_normal_bed }}</h3>
+                            <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
                           </span>
                         </div>
                       {% else %}
                         <div class="flex items-end text-xs">
                           <span class="flex items-center">
-                            <h3>{{ hospital.vaccant_normal_bed }}</h3>
+                            <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
                           </span>
                         </div>
                       {% endif %}
@@ -197,35 +197,35 @@
                   </p>
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Total
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.total_oxygen_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.total_oxygen_bed }}</h3>
                         </span>
                       </div>
                     </div>
                   
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Occupied
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.occupied_oxygen_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.occupied_oxygen_bed }}</h3>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
-                      <p>
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                      <p  class="m-2">
                       Vaccant
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.vaccant_oxygen_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.vaccant_oxygen_bed }}</h3>
                         </span>
                       </div>
                     </div>
@@ -237,35 +237,35 @@
                   </p>
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Total
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.total_ICU_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.total_ICU_bed }}</h3>
                         </span>
                       </div>
                     </div>
                   
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Occupied
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.occupied_ICU_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.occupied_ICU_bed }}</h3>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
-                      <p>
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                      <p  class="m-2">
                       Vaccant
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.vaccant_ICU_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.vaccant_ICU_bed }}</h3>
                         </span>
                       </div>
                     </div>
@@ -276,35 +276,35 @@
                   </p>
                     <div
                       class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      <p  class="m-2">
                       Total
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.total_ventilator_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.total_ventilator_bed }}</h3>
                         </span>
                       </div>
                     </div>
                   
                     <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 ">
+                      <p  class="m-2">
                       Occupied
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.occupied_ventilator_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.occupied_ventilator_bed }}</h3>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green">
-                      <p>
+                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                      <p  class="m-2">
                       Vaccant
                       </p>
                       <div class="flex items-end text-xs">
                         <span class="flex items-center">
-                          <h3>{{ hospital.vaccant_ventilator_bed }}</h3>
+                          <h3  class="m-2">{{ hospital.vaccant_ventilator_bed }}</h3>
                         </span>
                       </div>
                     </div>
