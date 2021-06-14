@@ -1,3 +1,6 @@
+
+# State List
+
 state_choices = {
     'Andhra Pradesh':'Andhra Pradesh',
     'Arunachal Pradesh':'Arunachal Pradesh',
@@ -28,8 +31,4 @@ state_choices = {
     'West Bengal':'West Bengal',
     'Jammu & Kashmir':'Jammu & Kashmir',
     'Puducherry':'Puducherry',
-}
-
-district_choices = {
-
 }

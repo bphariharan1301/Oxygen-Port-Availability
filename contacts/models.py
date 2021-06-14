@@ -9,5 +9,6 @@ class Contact(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=150)
     message = models.TextField()
+    Phone_no = models.CharField(max_length=20, blank=True)
     def __str__(self):
         return self.first_name

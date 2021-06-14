@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-
+import os
 
 # Create your views here.
 

@@ -12,6 +12,7 @@ def contact(request):
         email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
+        Phone_no = request.POST['Phone_no']
 
         # Contact.objects.create(first_name=first_name, last_name=last_name, email=email, subject=subject, message=message)
         contact = Contact(first_name=first_name, last_name=last_name, email=email, subject=subject, message=message)
@@ -22,15 +23,22 @@ def contact(request):
         send_mail( 
             subject,
             # 'Subject',
-            'A user has sent us a message:' + message + ' from ' + first_name + last_name + ' his contact details /n' + email,
-            email, # from email
-            # ['tiwariashu@pm.me', EMAIL_HOST_USER], # to email
+            'A user has sent us a message:' + message + ' from ' + first_name + last_name + ' his contact details ' + email +' ' + Phone_no,
+            EMAIL_HOST_USER, # from email
             [EMAIL_HOST_USER], # to email
             fail_silently = False,
         )
-        print(email)
+
+        send_mail (
+            'Email Sent to the admin Team', # Subject
+            # message 
+            'Hello Mr/Mrs, ' + first_name +' ' + last_name + '\n\nHope you are having fantastic day your message with the subject "' + subject +'" has been sent to our admin team. \n\nWe will get back to you shortly. \n\nThank you for contacting us. \n\nRegards, /n/nAdmin Team',  
+            EMAIL_HOST_USER, # from email
+            [email], # to email
+            fail_silently=False,
+        )
         
-        return redirect('contact-us')
+        return redirect('home')
     else:
         return render(request, 'Contact.html')
 
