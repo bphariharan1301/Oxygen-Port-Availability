@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('contacts/', include('contacts.urls')),
     path('charts/', include('charts.urls')),
+    path('datasets/', include('Datasets.urls')),
 ]  + static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)

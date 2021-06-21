@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'pages',
     'contacts',
     'charts',
+    'Datasets',
 ]
 
 MIDDLEWARE = [
