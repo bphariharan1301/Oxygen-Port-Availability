@@ -75,247 +75,266 @@
                                     <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
                                     </path>
                                 </svg>
-                                <input type="text" class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter State"/>
-                                    <div class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
-                                        +
-                                    </div>
+                                <form action="{% url 'beds' %}" method="GET">
+                                  {% csrf_token %}
+                                  <!-- Enter State Button -->
+                                  <div class="flex py-2">
+                                    <input type="text" name="state" id="state" value="{{ values.state }}" class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter State"/>
+                                    <input type="text" name="state" id="state" value="{{ values.state }}" class="block w-full py-1 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter City"/>
+                                  </div>
+                                  <!-- <input type="text" name="city" id="city" value="{{ values.city }}" class="block w-full py-2 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter city"/> -->
+                                      <!-- <div class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
+                                          +
+                                      </div> -->
+                                
                                 </div>
                             </div>
                             <div class="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
-                                <a href="#" class="block relative">
+                              <button class="btn btn-primary" type="submit">Search</button>
+                                <!-- <a href="{% url 'beds' %}" class="block relative">
                                     <img alt="profil" src="../static/img/undraw_House_searching_re_stk8.png" class="mx-auto object-cover rounded-full h-10 w-10 "/>
-                                </a>
+                                </a> -->
                             </div>
+                          </form> 
                         </div>
-                    </div>
-                </header>      
+                    </div>         
+  </header>      
 </section>
 
 <!-- Beds List Start -->
-{% for hospital in hospitals %}
-  <section class="container">
-      <div class="w-full">
-                <div class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-700 relative">
-                  <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
-                    Hospital Name	
-                  </p>
-                  <div class="flex items-end space-x-2 my-6">
-                    <p class="text-5xl text-black dark:text-white font-bold">
-                      {{ hospital.name }}
 
+{% if hospitals %}
+
+  {% for hospital in hospitals %}
+    <section class="container">
+        <div class="w-full">
+                  <div class="shadow-lg px-4 py-6 w-full bg-white dark:bg-gray-700 relative">
+                    <p class="text-sm w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
+                      Hospital Name	
                     </p>
-                    <span class="text-green-500 text-xl font-bold flex items-center">
-                      <svg width="20" fill="currentColor" height="20" class="h-3" viewBox="0 0 1792 1792"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z">
-                        </path>
-                      </svg>
-                      22
-                    </span>
-                  </div>
-                  <div class="dark:text-white">
-                    <p class="text-lg w-max text-red-700 dark:text-white font-semibold border-b border-gray-200">
-                    Contact Info	
-                  </p>
+                    <div class="flex items-end space-x-2 my-6">
+                      <p class="text-5xl text-black dark:text-white font-bold">
+                        {{ hospital.name }}
+
+                      </p>
+                      <span class="text-green-500 text-xl font-bold flex items-center">
+                        <svg width="20" fill="currentColor" height="20" class="h-3" viewBox="0 0 1792 1792"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1675 971q0 51-37 90l-75 75q-38 38-91 38-54 0-90-38l-294-293v704q0 52-37.5 84.5t-90.5 32.5h-128q-53 0-90.5-32.5t-37.5-84.5v-704l-294 293q-36 38-90 38t-90-38l-75-75q-38-38-38-90 0-53 38-91l651-651q35-37 90-37 54 0 91 37l651 651q37 39 37 91z">
+                          </path>
+                        </svg>
+                        22
+                      </span>
+                    </div>
+                    <div class="dark:text-white">
+                      <p class="text-lg w-max text-red-700 dark:text-white font-semibold border-b border-gray-200">
+                      Contact Info	
+                    </p>
+                      
                     
-                  
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
-                      Address
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2"><address>{{ hospital.address }}</address></h3>
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p>
-                      Phone
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2"> {{ hospital.Phone_No }}</h3>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Covid Beds -->
-                  <div class="dark:text-white">
-                    <p class="text-lg w-max text-green-700 dark:text-white font-semibold border-b border-gray-200">
-                    COVID BEDS	
-                  </p>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Total
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.total_normal_bed }}</h3>
-                        </span>
-                      </div>
-                    </div>
-                  
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Occupied
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.occupied_normal_bed }}</h3>
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg	">
-                      <p class="m-2">
-                      Vaccant
-                      </p>
-                      {% if hospital.vaccant_normal_bed %}
-                        <div class="flex items-end text-xs bg-green">
-                          <span class="flex items-center">
-                            <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
-                          </span>
-                        </div>
-                      {% else %}
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p>
+                        Address
+                        </p>
                         <div class="flex items-end text-xs">
                           <span class="flex items-center">
-                            <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
+                            <h3  class="m-2"><address>{{ hospital.address }}</address></h3>
                           </span>
                         </div>
-                      {% endif %}
-                    </div>
-                  </div>
-                  <div class="dark:text-white">
-                    <p class="text-lg w-max text-blue-700 dark:text-white font-semibold border-b border-gray-200">
-                    OXYGEN BED	
-                  </p>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Total
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.total_oxygen_bed }}</h3>
-                        </span>
+                      </div>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p>
+                        Phone
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2"> {{ hospital.Phone_No }}</h3>
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Occupied
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.occupied_oxygen_bed }}</h3>
-                        </span>
+                    <!-- Covid Beds -->
+                    <div class="dark:text-white">
+                      <p class="text-lg w-max text-green-700 dark:text-white font-semibold border-b border-gray-200">
+                      COVID BEDS	
+                    </p>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Total
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.total_normal_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                    
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Occupied
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.occupied_normal_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg	">
+                        <p class="m-2">
+                        Vaccant
+                        </p>
+                        {% if hospital.vaccant_normal_bed %}
+                          <div class="flex items-end text-xs bg-green">
+                            <span class="flex items-center">
+                              <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
+                            </span>
+                          </div>
+                        {% else %}
+                          <div class="flex items-end text-xs">
+                            <span class="flex items-center">
+                              <h3  class="m-2">{{ hospital.vaccant_normal_bed }}</h3>
+                            </span>
+                          </div>
+                        {% endif %}
                       </div>
                     </div>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
-                      <p  class="m-2">
-                      Vaccant
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.vaccant_oxygen_bed }}</h3>
-                        </span>
+                    <div class="dark:text-white">
+                      <p class="text-lg w-max text-blue-700 dark:text-white font-semibold border-b border-gray-200">
+                      OXYGEN BED	
+                    </p>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Total
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.total_oxygen_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                    
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Occupied
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.occupied_oxygen_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                        <p  class="m-2">
+                        Vaccant
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.vaccant_oxygen_bed }}</h3>
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <!--  -->
-                  <div class="dark:text-white">
-                    <p class="text-lg w-max text-indigo-700 dark:text-white font-semibold border-b border-gray-200">
-                    ICU BED	
-                  </p>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Total
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.total_ICU_bed }}</h3>
-                        </span>
+                    <!--  -->
+                    <div class="dark:text-white">
+                      <p class="text-lg w-max text-indigo-700 dark:text-white font-semibold border-b border-gray-200">
+                      ICU BED	
+                    </p>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Total
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.total_ICU_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                    
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Occupied
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.occupied_ICU_bed }}</h3>
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                        <p  class="m-2">
+                        Vaccant
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.vaccant_ICU_bed }}</h3>
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Occupied
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.occupied_ICU_bed }}</h3>
-                        </span>
+                    <div class="dark:text-white">
+                      <p class="text-lg w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
+                      VENTILATOR BED	
+                    </p>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
+                        <p  class="m-2">
+                        Total
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.total_ventilator_bed }}</h3>
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
-                      <p  class="m-2">
-                      Vaccant
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.vaccant_ICU_bed }}</h3>
-                        </span>
+                    
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 ">
+                        <p  class="m-2">
+                        Occupied
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.occupied_ventilator_bed }}</h3>
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="dark:text-white">
-                    <p class="text-lg w-max text-gray-700 dark:text-white font-semibold border-b border-gray-200">
-                    VENTILATOR BED	
-                  </p>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200">
-                      <p  class="m-2">
-                      Total
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.total_ventilator_bed }}</h3>
-                        </span>
-                      </div>
-                    </div>
-                  
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 ">
-                      <p  class="m-2">
-                      Occupied
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.occupied_ventilator_bed }}</h3>
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
-                      <p  class="m-2">
-                      Vaccant
-                      </p>
-                      <div class="flex items-end text-xs">
-                        <span class="flex items-center">
-                          <h3  class="m-2">{{ hospital.vaccant_ventilator_bed }}</h3>
-                        </span>
+                      <div
+                        class="flex items-center pb-2 mb-2 text-sm sm:space-x-12  justify-between border-b border-gray-200 bg-green rounded-lg">
+                        <p  class="m-2">
+                        Vaccant
+                        </p>
+                        <div class="flex items-end text-xs">
+                          <span class="flex items-center">
+                            <h3  class="m-2">{{ hospital.vaccant_ventilator_bed }}</h3>
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-  </section>
-  
-<br> <br> <br>
-{% endfor %}
+    </section>
+    
+  <br> <br> <br>
+  {% endfor %}
 
+{% else %}
+    <h1 class="text-black font-size-small text-center">
+      No Hospital found for the Entered state {{ values.state }}
+    </h1>
+
+{% endif %}
 
 
 </body>
