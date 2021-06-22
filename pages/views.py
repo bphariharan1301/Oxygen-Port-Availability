@@ -7,7 +7,7 @@ from .choices import *
 def home(request):
     return render(request, 'index.html', {})
 
-def beds(request):    
+def search(request):    
     
     hospitals = Hospital.objects.all() 
     # queryset_list = Hospital.objects.all() 
@@ -19,9 +19,9 @@ def beds(request):
             # queryset_list = queryset_list.filter(statet=state__iexact)
     
     if 'district' in request.GET:
-        state = request.GET['district']
-        if state:
-            hospitals = hospitals.filter(state__iexact=state)
+        district = request.GET['district']
+        if district:
+            hospitals = hospitals.filter(district__iexact=district)
             # queryset_list = queryset_list.filter(statet=state__iexact)
 
     # print(state)
@@ -37,7 +37,10 @@ def beds(request):
     # print(hospitals)
 
     # return render(request, 'beds.html', {'hospitals':hospitals}) You can pass in this way too!
-    return render(request, 'beds.html', context)
+    return render(request, 'search.html', context)
+
+def beds(request):
+    return render(request, 'beds.html')
 
 def oxygen(request):
     return render(request, 'oxygens.html', {})

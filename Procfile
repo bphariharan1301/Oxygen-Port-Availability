@@ -1,0 +1,1 @@
+web: gunicorn Covid_Support.wsgi
