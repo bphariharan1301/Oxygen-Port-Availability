@@ -80,7 +80,7 @@
                                   <!-- Enter State Button -->
                                   <div class="flex py-2">
                                     <input type="text" name="state" id="state" value="{{ values.state }}" class="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter State"/>
-                                    <input type="text" name="state" id="state" value="{{ values.state }}" class="block w-full py-1 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter City"/>
+                                    <input type="text" name="state" id="state" value="{{ values.district }}" class="block w-full py-1 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter District"/>
                                   </div>
                                   <!-- <input type="text" name="city" id="city" value="{{ values.city }}" class="block w-full py-2 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100 dark:bg-gray-800 text-gray-400 aa-input" placeholder="Enter city"/> -->
                                       <!-- <div class="absolute right-0 hidden h-auto px-2 py-1 mr-2 text-xs text-gray-400 border border-gray-300 rounded-2xl md:block">
@@ -90,10 +90,9 @@
                                 </div>
                             </div>
                             <div class="relative p-1 flex items-center justify-end w-1/4 ml-5 mr-4 sm:mr-0 sm:right-auto">
-                              <button class="btn btn-primary" type="submit">Search</button>
-                                <!-- <a href="{% url 'beds' %}" class="block relative">
-                                    <img alt="profil" src="../static/img/undraw_House_searching_re_stk8.png" class="mx-auto object-cover rounded-full h-10 w-10 "/>
-                                </a> -->
+                              <button class="btn block relative" type="submit"> 
+                                    <img alt="profile" src="../static/img/undraw_House_searching_re_stk8.png" class="mx-auto object-cover rounded-full h-10 w-10 "/>
+                              </button>
                             </div>
                           </form> 
                         </div>
@@ -331,7 +330,7 @@
 
 {% else %}
     <h1 class="text-black font-size-small text-center">
-      No Hospital found for the Entered state {{ values.state }}
+      No Hospital found for the Entered state {{ values.state }} and city {{ values.district }}
     </h1>
 
 {% endif %}

@@ -8,6 +8,7 @@ def home(request):
     return render(request, 'index.html', {})
 
 def beds(request):    
+    
     hospitals = Hospital.objects.all() 
     # queryset_list = Hospital.objects.all() 
 
@@ -16,8 +17,9 @@ def beds(request):
         if state:
             hospitals = hospitals.filter(state__iexact=state)
             # queryset_list = queryset_list.filter(statet=state__iexact)
-    if 'state' in request.GET:
-        state = request.GET['state']
+    
+    if 'district' in request.GET:
+        state = request.GET['district']
         if state:
             hospitals = hospitals.filter(state__iexact=state)
             # queryset_list = queryset_list.filter(statet=state__iexact)
