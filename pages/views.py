@@ -45,10 +45,10 @@ def beds(request):
 def oxygen(request):
     return render(request, 'oxygens.html', {})
 
-# def charts(request):
-#     return render(request, 'Charts.html', {})
-
 def donate(request):
     return render(request, 'Donate.html', {})
+
+def error_page(request):
+    return render(request, 'partials/_page404.html')
 
 

@@ -21,13 +21,17 @@
                   </li>
                 {% endif %}
 
-                {% if 'beds' or 'search' in request.path %}
+                {% if 'beds' in request.path %}
+                  <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
+                  </li>
+                {% elif 'search' in request.path %}
                   <li class="nav-item active">
                       <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
                   </li>
                 {% else %}
-                  <li class="nav-item ">
-                      <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'beds' %}"><i class="far fa-address-book"></i>Beds(Covid)</a>
                   </li>
                 {% endif %}
 
@@ -62,20 +66,20 @@
                   </li>
                 {% endif %}
 
-                <!-- {% if 'donate' in request.path %}
+                {% if 'error_page' in request.path %}
                   <li class="nav-item active">
-                      <a class="nav-link" href="#"><i class="far fa-copy"></i>Comming Soon</a>
-                      <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Comming Soon</a> 
+                      <a class="nav-link" href="{% url 'error_page' %}"><i class="far fa-copy"></i>Comming Soon</a>
+                      <!-- <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Comming Soon</a>  -->
                   </li>
                 {% else %}
                   <li class="nav-item">
-                      <a class="nav-link" href="#"><i class="far fa-copy"></i>Comming Soon</a>
-                      <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Comming Soon</a>
+                      <a class="nav-link" href="{% url 'error_page' %}"><i class="far fa-copy"></i>Comming Soon</a>
+                      <!-- <a class="nav-link" href="{% url 'donate' %}"><i class="far fa-copy"></i>Comming Soon</a> -->
                   </li>
-                {% endif %} -->
-                <li class="nav-item">
-                <a class="nav-link" href="#"><i class="far fa-copy"></i>Comming Soon</a>
-              </li>
+                {% endif %}
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="far fa-chart-bar"></i>Comming Soon</a>
+                </li> -->
             </ul>
         </div>
     </nav>
